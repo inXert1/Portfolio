@@ -1,10 +1,6 @@
-# Vince Gabriel - Personal Portfolio
+# Vince Gabriel A. Estander- Personal Portfolio
 
-## Overview
-
-A modern, responsive, and performance-optimized personal portfolio showcasing professional projects, skills, and experience. The application features a dynamic single-page scrolling layout, sophisticated animations, and a secure contact form system with comprehensive bot defense mechanisms.
-
-## Technology Stack
+## Technology Stack Used
 
 ### Core Architecture
 
