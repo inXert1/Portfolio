@@ -152,8 +152,10 @@ export async function POST(req: NextRequest) {
 
   // ── 9. Send email ─────────────────────────────────────────────────────────
   try {
+    const senderEmail = process.env.MAILTRAP_SENDER_EMAIL ?? "hello@demomailtrap.co";
+    
     await transporter.sendMail({
-      from: `"Portfolio Contact" `,
+      from: `"Portfolio Contact" <${senderEmail}>`,
       to: process.env.CONTACT_RECIPIENT ?? "vinceestander3@gmail.com",
       replyTo: `"${safeName}" <${safeEmail}>`,
       subject: `New message from ${safeName} via your portfolio`,

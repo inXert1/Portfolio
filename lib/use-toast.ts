@@ -1,6 +1,5 @@
-"use client"
-
-import { useState, useCallback } from "react"
+import { useContext } from "react"
+import { ToastContext } from "@/components/providers/toast-provider"
 
 export type ToastType = "success" | "error"
 
@@ -11,20 +10,11 @@ export interface Toast {
 }
 
 export function useToast() {
-  const [toasts, setToasts] = useState<Toast[]>([])
-
-  const showToast = useCallback((type: ToastType, message: string) => {
-    const id = Math.random().toString(36).slice(2)
-    setToasts((prev) => [...prev, { id, type, message }])
-
-    setTimeout(() => {
-      setToasts((prev) => prev.filter((t) => t.id !== id))
-    }, 5500)
-  }, [])
-
-  const dismissToast = useCallback((id: string) => {
-    setToasts((prev) => prev.filter((t) => t.id !== id))
-  }, [])
-
-  return { toasts, showToast, dismissToast }
+  const context = useContext(ToastContext)
+  
+  if (!context) {
+    throw new Error("useToast must be used within a ToastProvider")
+  }
+  
+  return context
 }

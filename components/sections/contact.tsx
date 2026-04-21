@@ -4,7 +4,6 @@ import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Mail, Link2, Code, ArrowUpRight, Send, CheckCircle, Loader2 } from "lucide-react"
 import { useToast } from "@/lib/use-toast"
-import { ToastContainer } from "@/components/ui/toast"
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -27,7 +26,7 @@ interface FormState {
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export function ContactSection() {
-  const { toasts, showToast, dismissToast } = useToast()
+  const { showToast } = useToast()
   const [status, setStatus] = React.useState<FormStatus>("idle")
   const [cooldownSeconds, setCooldownSeconds] = React.useState(0)
   const [form, setForm] = React.useState<FormState>({ name: "", email: "", message: "" })
@@ -336,9 +335,6 @@ export function ContactSection() {
 
         </div>
       </section>
-
-      {/* Toast notifications */}
-      <ToastContainer toasts={toasts} onDismiss={dismissToast} />
     </>
   )
 }

@@ -3,6 +3,7 @@ import { Syncopate, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ToastProvider } from "@/components/providers/toast-provider";
 import { Navbar } from "@/components/ui/navbar";
 import { AppLoader } from "../components/ui/app-loader";
 
@@ -45,11 +46,13 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
         >
-          <AppLoader />
-          <Navbar />
-          <main className="flex-1 w-full max-w-none">
-            {children}
-          </main>
+          <ToastProvider>
+            <AppLoader />
+            <Navbar />
+            <main className="flex-1 w-full max-w-none">
+              {children}
+            </main>
+          </ToastProvider>
         </ThemeProvider>
       </body>
     </html>
