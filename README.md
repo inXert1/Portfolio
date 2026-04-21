@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vince Gabriel - Personal Portfolio
 
-## Getting Started
+## Overview
 
-First, run the development server:
+A modern, responsive, and performance-optimized personal portfolio showcasing professional projects, skills, and experience. The application features a dynamic single-page scrolling layout, sophisticated animations, and a secure contact form system with comprehensive bot defense mechanisms.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technology Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Core Architecture
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: Next.js
+- **UI Library**: React
+- **Language**: TypeScript
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Styling and UI
 
-## Learn More
+- **Styling**: Tailwind CSS (v4)
+- **Component System**: Shadcn UI, Radix UI Primitives
+- **Icons**: Lucide React
+- **Carousels**: Embla Carousel React
 
-To learn more about Next.js, take a look at the following resources:
+### Animations and Interactions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Declarative Animations**: Motion
+- **Complex UI Animations**: Anime.js
+- **Utility Animations**: Class Variance Authority, Tailwind Merge, tw-animate-css
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Backend Integration
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Email Delivery**: Nodemailer
