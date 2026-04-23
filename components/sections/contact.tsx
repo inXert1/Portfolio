@@ -7,7 +7,7 @@ import { useToast } from "@/lib/use-toast"
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-const email = process.env.CONTACT_RECIPIENT;
+const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
 
 const contactLinks = [
   { name: "Email", icon: Mail, value: email, href: `mailto:${email}` },
