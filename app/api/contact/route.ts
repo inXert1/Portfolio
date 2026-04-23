@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
-import { buildEmailHtml, buildEmailText } from "@/lib/email-template";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -58,17 +56,12 @@ function sanitize(value: string, maxLength: number): string {
     .slice(0, maxLength);
 }
 
-// ─── Nodemailer transporter ───────────────────────────────────────────────────
+// ─── EmailJS Configuration ────────────────────────────────────────────────────
 
-const transporter = nodemailer.createTransport({
-  host: process.env.MAILTRAP_HOST ?? "live.smtp.mailtrap.io",
-  port: Number(process.env.MAILTRAP_PORT ?? 587),
-  secure: false,
-  auth: {
-    user: process.env.MAILTRAP_USER ?? "api",
-    pass: process.env.MAILTRAP_TOKEN,
-  },
-});
+const EMAILJS_SERVICE_ID = process.env.EMAILJS_SERVICE_ID!;
+const EMAILJS_TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID!;
+const EMAILJS_PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY!;
+const EMAILJS_PRIVATE_KEY = process.env.EMAILJS_PRIVATE_KEY;
 
 // ─── Route handler ────────────────────────────────────────────────────────────
 
@@ -150,18 +143,34 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // ── 9. Send email ─────────────────────────────────────────────────────────
+  // ── 9. Send email via EmailJS ─────────────────────────────────────────────
   try {
-    const senderEmail = process.env.MAILTRAP_SENDER_EMAIL ?? "hello@demomailtrap.co";
-    
-    await transporter.sendMail({
-      from: `"Portfolio Contact" <${senderEmail}>`,
-      to: process.env.CONTACT_RECIPIENT ?? "vinceestander3@gmail.com",
-      replyTo: `"${safeName}" <${safeEmail}>`,
-      subject: `New message from ${safeName} via your portfolio`,
-      html: buildEmailHtml({ senderName: safeName, senderEmail: safeEmail, message: safeMessage }),
-      text: buildEmailText({ senderName: safeName, senderEmail: safeEmail, message: safeMessage }),
+    const templateParams = {
+      from_name: safeName,
+      from_email: safeEmail,
+      message: safeMessage,
+      to_email: process.env.CONTACT_RECIPIENT ?? "vinceestander3@gmail.com",
+    };
+
+    // Use server-side EmailJS API endpoint
+    const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        service_id: EMAILJS_SERVICE_ID,
+        template_id: EMAILJS_TEMPLATE_ID,
+        user_id: EMAILJS_PUBLIC_KEY,
+        accessToken: EMAILJS_PRIVATE_KEY,
+        template_params: templateParams,
+      }),
     });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`EmailJS error: ${errorText}`);
+    }
 
     return NextResponse.json({ success: true });
   } catch (err) {
