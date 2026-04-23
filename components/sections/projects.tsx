@@ -32,7 +32,7 @@ const projects: Project[] = [
     description: "Led frontend and mobile development for a multi-tenant SaaS HRIS platform, architecting a robust recruitment pipeline and integrating an AI-powered ATS alongside a context-aware chatbot capable of handling natural language requests.",
     tags: ["Node.js", "PostgreSQL", "Flutter", "Riverpod", "SaaS", "TypeScript", "React.js"],
     href: "https://hris.c8nnect.com/",
-    github: "#",
+    github: "",
   },
   {
     title: "rehearsAI",
@@ -101,6 +101,13 @@ const projects: Project[] = [
         description: "Viewing historical data and growth over time." 
       },
     ]
+  },
+  {
+    title: "KNEAT",
+    description: "High Fidelity E-commerce Website for a mock fashion brand inspired by 'Fear of God' brand. Utilized GSAP for animations and Mail.js for email functionality.",
+    tags: ["React.js", "Tailwind CSS", "GSAP", "Mail.js", "JavaScript"],
+    href: "https://kneatwear.netlify.app/",
+    github: "https://github.com/inXert1/KNEAT",
   },
 ]
 
