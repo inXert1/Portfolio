@@ -149,7 +149,7 @@ export async function POST(req: NextRequest) {
       from_name: safeName,
       from_email: safeEmail,
       message: safeMessage,
-      to_email: process.env.CONTACT_RECIPIENT ?? "vinceestander3@gmail.com",
+      to_email: process.env.CONTACT_RECIPIENT
     };
 
     // Use server-side EmailJS API endpoint

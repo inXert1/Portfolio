@@ -7,8 +7,10 @@ import { useToast } from "@/lib/use-toast"
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
+const email = process.env.CONTACT_RECIPIENT;
+
 const contactLinks = [
-  { name: "Email", icon: Mail, value: "vinceestander3@gmail.com", href: "mailto:vinceestander3@gmail.com" },
+  { name: "Email", icon: Mail, value: email, href: `mailto:${email}` },
   { name: "LinkedIn", icon: Link2, value: "linkedin.com/in/vince-gabriel1", href: "https://www.linkedin.com/in/vince-gabriel1" },
   { name: "GitHub", icon: Code, value: "github.com/inXert1", href: "https://github.com/inXert1" },
 ]
