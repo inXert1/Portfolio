@@ -108,6 +108,11 @@ const projects: Project[] = [
     tags: ["React.js", "Tailwind CSS", "GSAP", "Mail.js", "JavaScript"],
     href: "https://kneatwear.netlify.app/",
     github: "https://github.com/inXert1/KNEAT",
+    image: { 
+      light: "/kneat-logos/kneat-logo-green.png", 
+      dark: "/kneat-logos/kneat-logo-white.png" 
+    },
+    imageDisplay: "icon",
   },
 ]
 
