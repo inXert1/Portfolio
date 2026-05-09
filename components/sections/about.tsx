@@ -5,17 +5,24 @@ import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 
 const skills = {
-  Web: ["React", "Next.js", "Tailwind CSS", "TypeScript", "JavaScript", "Vue.js"],
+  Web: ["React", "Next.js", "Vue.js", "Tailwind CSS", "TypeScript", "JavaScript"],
   Mobile: ["Flutter", "Riverpod", "Dart"],
   "Backend & DB": ["Node.js", "PostgreSQL", "Supabase", "Prisma", "Express", "SMTP", "REST API"],
-  Design: ["Adobe Illustrator", "Figma"],
+  Design: ["Adobe Illustrator", "Figma", "Canva", "Adobe Photoshop"],
+  Tools: ["ChatGPT", "Claude", "Gemini", "GitHub Copilot", "Google Stitch", "DeepSeek" ],
 }
 
 const experience = [
   {
+    company: "Maris Joefren",
+    role: "Freelance Graphic Artist",
+    period: "MARCH 2026 - PRESENT",
+    description: "Delivering high-quality graphic design services to the business, enhancing brand visuals and communication through multiple platforms (Facebook, TikTok Shop, Shopee) with creative design solutions.",
+  },
+  {
     company: "C8nnect IT Solutions",
     role: "Junior Fullstack Developer & Intern Leader",
-    period: "Ongoing",
+    period: "JANUARY 2026 - APRIL 2026",
     description: "Spearheading frontend architecture and technical implementation. Managing a team of interns, providing mentorship and standardizing codebase practices.",
   },
   {

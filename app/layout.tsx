@@ -40,7 +40,7 @@ export default function RootLayout({
         "font-sans"
       )}
     >
-      <body className="min-h-full flex flex-col font-sans bg-background text-foreground transition-colors duration-300">
+      <body className="min-h-full flex flex-col font-sans bg-background text-foreground">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -17,6 +17,7 @@ import Link from "next/link"
 const navLinks = [
   { name: "Home", href: "/#home" },
   { name: "Projects", href: "/#projects" },
+  { name: "Gallery", href: "/gallery" },
   { name: "About", href: "/#about" },
   { name: "Contact", href: "/#contact" },
 ]
@@ -34,38 +35,55 @@ export function Navbar() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
   const closeMenu = () => setIsMenuOpen(false)
 
-  const logoSrc: StaticImageData | string = mounted && resolvedTheme === "dark" 
-    ? WhiteLogo 
-    : BlackLogo
-
-  const textLogoSrc: StaticImageData | string = mounted && resolvedTheme === "dark"
-    ? WhiteTextLogo
-    : BlackTextLogo
+  const isDark = mounted && resolvedTheme === "dark"
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-4xl">
       <nav className="flex items-center justify-between px-6 py-3 bg-background/60 backdrop-blur-md rounded-full border border-border shadow-sm">
         <Link href="/#home" className="flex items-center gap-2">
           {mounted ? (
-            <Image
-              src={logoSrc}
-              alt="Logo"
-              width={40}
-              height={40}
-              className="w-8 h-8 object-contain"
-            />
+            <div className="relative w-8 h-8">
+              <Image
+                src={BlackLogo}
+                alt="Logo"
+                width={40}
+                height={40}
+                className="absolute inset-0 w-8 h-8 object-contain transition-opacity duration-300"
+                style={{ opacity: isDark ? 0 : 1 }}
+              />
+              <Image
+                src={WhiteLogo}
+                alt="Logo"
+                width={40}
+                height={40}
+                className="absolute inset-0 w-8 h-8 object-contain transition-opacity duration-300"
+                style={{ opacity: isDark ? 1 : 0 }}
+              />
+            </div>
           ) : (
             <div className="w-8 h-8 rounded-full bg-muted animate-pulse" />
           )}
           {mounted ? (
-            <Image
-              src={textLogoSrc}
-              alt="VG Estander"
-              height={32}
-              unoptimized
-              priority
-              className="h-7.5 w-auto object-contain hidden sm:block"
-            />
+            <div className="relative h-7.5 w-48 hidden sm:block">
+              <Image
+                src={BlackTextLogo}
+                alt="VG Estander"
+                height={32}
+                unoptimized
+                priority
+                className="absolute inset-0 h-7.5 w-auto object-contain transition-opacity duration-300"
+                style={{ opacity: isDark ? 0 : 1 }}
+              />
+              <Image
+                src={WhiteTextLogo}
+                alt="VG Estander"
+                height={32}
+                unoptimized
+                priority
+                className="absolute inset-0 h-7.5 w-auto object-contain transition-opacity duration-300"
+                style={{ opacity: isDark ? 1 : 0 }}
+              />
+            </div>
           ) : (
             <div className="h-8 w-48 bg-muted animate-pulse hidden sm:block rounded-sm" />
           )}
