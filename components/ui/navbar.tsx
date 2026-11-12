@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import Image, { StaticImageData } from "next/image"
+import Image from "next/image"
 import { useTheme } from "next-themes"
 import { ThemeToggle } from "./theme-toggle"
 import { Menu, X } from "lucide-react"

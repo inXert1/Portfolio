@@ -28,77 +28,88 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "BetterMalolos.org",
+    description: "• Contributing to BetterMalolos, an open-source civic-tech initiative helping Malolos residents navigate local government processes, built with vanilla HTML/CSS/JS and a Python backend (transitioning to a modern framework).",
+    tags: ["HTML", "CSS", "Javascript", "Python", "Test-Driven Development"],
+    href: "https://bettermalolos.org/",
+    image: "/bettermalolos.png",
+    imageDisplay: "icon",
+    github: "",
+  },
+  {
     title: "Sphere HR",
-    description: "Led frontend and mobile development for a multi-tenant SaaS HRIS platform, architecting a robust recruitment pipeline and integrating an AI-powered ATS alongside a context-aware chatbot capable of handling natural language requests.",
+    description: "Fullstack Developer while leading the frontend and mobile development for a multi-tenant SaaS HRIS platform, architecting a robust recruitment pipeline and integrating an AI-powered ATS alongside a context-aware chatbot capable of handling natural language requests.",
     tags: ["Node.js", "PostgreSQL", "Flutter", "Riverpod", "SaaS", "TypeScript", "React.js"],
-    href: "https://hris.c8nnect.com/",
+    href: "https://sphere.c8nnect.com/",
+    image: "/sphere.png",
+    imageDisplay: "icon",
     github: "",
   },
   {
     title: "rehearsAI",
     description: "An AI-driven platform for automated interview preparation and performance feedback. Built with a high-performance Vue ecosystem and integrated with LLM endpoints.",
     tags: ["Vue.js", "TypeScript", "Node.js", "AI", "Voxtral TTS", "MongoDB", "Express.js", "REST API"],
-    image: { 
-      light: "/rehearsai-photos/rAI-logos/rehearsAI-logo.png", 
-      dark: "/rehearsai-photos/rAI-logos/rehearsAI-logo-white.png" 
+    image: {
+      light: "/rehearsai-photos/rAI-logos/rehearsAI-logo.png",
+      dark: "/rehearsai-photos/rAI-logos/rehearsAI-logo-white.png"
     },
     imageDisplay: "icon",
     inProgress: true,
     gallery: [
-      { 
-        src: "/rehearsai-photos/login.png", 
-        label: "Secure Access", 
-        description: "Welcome back screen with social auth integration." 
+      {
+        src: "/rehearsai-photos/login.png",
+        label: "Secure Access",
+        description: "Welcome back screen with social auth integration."
       },
-      { 
-        src: "/rehearsai-photos/register.png", 
-        label: "Join RehearsAI", 
-        description: "Creating a new account to start practicing." 
+      {
+        src: "/rehearsai-photos/register.png",
+        label: "Join RehearsAI",
+        description: "Creating a new account to start practicing."
       },
-      { 
-        src: "/rehearsai-photos/register2.png", 
-        label: "Onboarding", 
-        description: "Step-by-step registration flow for new users." 
+      {
+        src: "/rehearsai-photos/register2.png",
+        label: "Onboarding",
+        description: "Step-by-step registration flow for new users."
       },
-      { 
-        src: "/rehearsai-photos/dashboard.png", 
-        label: "Control Center", 
-        description: "Overview of recent practice sessions and performance metrics." 
+      {
+        src: "/rehearsai-photos/dashboard.png",
+        label: "Control Center",
+        description: "Overview of recent practice sessions and performance metrics."
       },
-      { 
-        src: "/rehearsai-photos/pre-interview.png", 
-        label: "Warm up", 
-        description: "Configuring the AI interviewer and selecting practice topics." 
+      {
+        src: "/rehearsai-photos/pre-interview.png",
+        label: "Warm up",
+        description: "Configuring the AI interviewer and selecting practice topics."
       },
-      { 
-        src: "/rehearsai-photos/pre-interview2.png", 
-        label: "Interview Setup", 
-        description: "Refining the difficulty and focus areas of the session." 
+      {
+        src: "/rehearsai-photos/pre-interview2.png",
+        label: "Interview Setup",
+        description: "Refining the difficulty and focus areas of the session."
       },
-      { 
-        src: "/rehearsai-photos/interview.png", 
-        label: "Live Practice", 
-        description: "Real-time AI-driven interview session with natural language processing." 
+      {
+        src: "/rehearsai-photos/interview.png",
+        label: "Live Practice",
+        description: "Real-time AI-driven interview session with natural language processing."
       },
-      { 
-        src: "/rehearsai-photos/feedback.png", 
-        label: "Performance Analysis", 
-        description: "Detailed score breakdown and AI-generated feedback on answers." 
+      {
+        src: "/rehearsai-photos/feedback.png",
+        label: "Performance Analysis",
+        description: "Detailed score breakdown and AI-generated feedback on answers."
       },
-      { 
-        src: "/rehearsai-photos/feedback2.png", 
-        label: "Insights", 
-        description: "Deep dive into specific areas of improvement identified by the LLM." 
+      {
+        src: "/rehearsai-photos/feedback2.png",
+        label: "Insights",
+        description: "Deep dive into specific areas of improvement identified by the LLM."
       },
-      { 
-        src: "/rehearsai-photos/profile1.png", 
-        label: "User Profile", 
-        description: "Managing account settings and personal information." 
+      {
+        src: "/rehearsai-photos/profile1.png",
+        label: "User Profile",
+        description: "Managing account settings and personal information."
       },
-      { 
-        src: "/rehearsai-photos/profile2.png", 
-        label: "Progress Tracking", 
-        description: "Viewing historical data and growth over time." 
+      {
+        src: "/rehearsai-photos/profile2.png",
+        label: "Progress Tracking",
+        description: "Viewing historical data and growth over time."
       },
     ]
   },
@@ -108,9 +119,9 @@ const projects: Project[] = [
     tags: ["React.js", "Tailwind CSS", "GSAP", "Mail.js", "JavaScript"],
     href: "https://kneatwear.netlify.app/",
     github: "https://github.com/inXert1/KNEAT",
-    image: { 
-      light: "/kneat-logos/kneat-logo-green.png", 
-      dark: "/kneat-logos/kneat-logo-white.png" 
+    image: {
+      light: "/kneat-logos/kneat-logo-green.png",
+      dark: "/kneat-logos/kneat-logo-white.png"
     },
     imageDisplay: "icon",
   },
@@ -123,7 +134,7 @@ export function ProjectsSection() {
     <section id="projects" className="min-h-screen py-32 px-6 sm:px-12 xl:px-24 w-full">
       <div className="max-w-7xl mx-auto flex flex-col gap-16 w-full">
         <div className="flex flex-col gap-6 max-w-3xl">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -131,7 +142,7 @@ export function ProjectsSection() {
           >
             Selected Works
           </motion.h2>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -140,7 +151,7 @@ export function ProjectsSection() {
           >
             Building <span className="opacity-40">Digital</span> Legacy.
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -160,16 +171,16 @@ export function ProjectsSection() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: 0.2 + (index * 0.1) }}
             >
-              <ProjectCard 
-                {...project} 
+              <ProjectCard
+                {...project}
                 onClick={project.gallery ? () => setSelectedProject(project) : undefined}
               />
             </motion.div>
           ))}
         </div>
-        
+
         {/* Placeholder for more */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -190,8 +201,8 @@ export function ProjectsSection() {
             <DialogTitle className="font-syncopate tracking-tight text-xl flex items-center">
               {selectedProject?.imageDisplay === 'icon' && typeof selectedProject.image === 'object' ? (
                  <div className="relative h-10 w-56 -ml-1">
-                   <Image src={selectedProject.image.light} alt={selectedProject.title} fill className="object-contain dark:hidden object-left" priority />
-                   <Image src={selectedProject.image.dark} alt={selectedProject.title} fill className="object-contain hidden dark:block object-left" priority />
+                   <Image src={selectedProject.image.light} alt={selectedProject.title} fill sizes="224px" className="object-contain dark:hidden object-left" />
+                   <Image src={selectedProject.image.dark} alt={selectedProject.title} fill sizes="224px" className="object-contain hidden dark:block object-left" />
                  </div>
               ) : (
                 <span className="uppercase">{selectedProject?.title}</span>
@@ -213,12 +224,13 @@ export function ProjectsSection() {
                     return (
                       <CarouselItem key={i} className="h-full flex flex-col gap-4">
                         <div className="relative flex-1 w-full rounded-xl overflow-hidden bg-muted/10 border border-border/30">
-                          <Image 
-                            src={src} 
-                            alt={`${selectedProject.title} screenshot ${i + 1}`} 
-                            fill 
-                            className="object-contain p-4" 
-                            priority={i === 0} 
+                          <Image
+                            src={src}
+                            alt={`${selectedProject.title} screenshot ${i + 1}`}
+                            fill
+                            sizes="95vw"
+                            className="object-contain p-4"
+                            priority={i === 0}
                           />
                         </div>
                         {(label || description) && (

@@ -57,15 +57,15 @@ export function Hero() {
           <p className="font-sans text-base sm:text-xl font-light text-muted-foreground leading-relaxed max-w-xl">
             <span className="font-bold text-foreground inline-block">Junior Fullstack Developer Specializing in Frontend Development</span> specializing in building high-performance multi-tenant SaaS platforms and dynamic mobile ecosystems.
           </p>
-          
+
           <div className="flex flex-wrap items-center gap-4">
-            <a 
+            <a
               href="#projects"
               className="px-8 py-4 bg-foreground text-background rounded-full font-bold uppercase text-xs tracking-widest hover:scale-105 active:scale-95 transition-all inline-block text-center"
             >
               View Projects
             </a>
-            <a 
+            <a
               href="#about"
               className="px-8 py-4 border border-border rounded-full font-bold uppercase text-xs tracking-widest hover:bg-muted transition-all inline-block text-center text-foreground"
             >

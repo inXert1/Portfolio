@@ -21,16 +21,16 @@ interface ProjectCardProps {
   imageDisplay?: "cover" | "icon"
 }
 
-export function ProjectCard({ 
-  title, 
-  description, 
-  tags, 
-  href, 
-  github, 
-  image, 
-  onClick, 
+export function ProjectCard({
+  title,
+  description,
+  tags,
+  href,
+  github,
+  image,
+  onClick,
   inProgress,
-  imageDisplay = "cover" 
+  imageDisplay = "cover"
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -47,10 +47,11 @@ export function ProjectCard({
           <div className="relative aspect-video overflow-hidden bg-muted">
             {image ? (
               typeof image === 'string' ? (
-                <Image 
-                  src={image} 
-                  alt={title} 
+                <Image
+                  src={image}
+                  alt={title}
                   fill
+                  sizes="(min-width: 1024px) 28vw, (min-width: 768px) 42vw, 92vw"
                   className={cn(
                     "transition-transform duration-500",
                     imageDisplay === "icon" ? "object-contain p-12 group-hover:scale-110" : "object-cover group-hover:scale-105"
@@ -58,19 +59,21 @@ export function ProjectCard({
                 />
               ) : (
                 <>
-                  <Image 
-                    src={image.light} 
-                    alt={title} 
+                  <Image
+                    src={image.light}
+                    alt={title}
                     fill
+                    sizes="(min-width: 1024px) 28vw, (min-width: 768px) 42vw, 92vw"
                     className={cn(
                       "transition-transform duration-500 dark:hidden",
                       imageDisplay === "icon" ? "object-contain p-12 group-hover:scale-110" : "object-cover group-hover:scale-105"
                     )}
                   />
-                  <Image 
-                    src={image.dark} 
-                    alt={title} 
+                  <Image
+                    src={image.dark}
+                    alt={title}
                     fill
+                    sizes="(min-width: 1024px) 28vw, (min-width: 768px) 42vw, 92vw"
                     className={cn(
                       "transition-transform duration-500 hidden dark:block",
                       imageDisplay === "icon" ? "object-contain p-12 group-hover:scale-110" : "object-cover group-hover:scale-105"
@@ -83,7 +86,7 @@ export function ProjectCard({
                 <span className="font-syncopate text-xs opacity-20 uppercase font-bold tracking-widest">{title}</span>
               </div>
             )}
-            
+
             {/* Overlay on hover */}
             <div className={cn(
               "absolute inset-0 bg-background/80 flex flex-col items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300",
@@ -107,7 +110,7 @@ export function ProjectCard({
             </div>
           </div>
         </CardHeader>
-        
+
         <CardContent className="p-6 flex-1">
           <div className="flex justify-between items-start gap-4 mb-2">
             <CardTitle className="font-syncopate text-lg uppercase tracking-tight">{title}</CardTitle>
@@ -121,7 +124,7 @@ export function ProjectCard({
             {description}
           </CardDescription>
         </CardContent>
-        
+
         <CardFooter className="p-6 pt-0 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <Badge key={tag} variant="secondary" className="px-2 py-0 text-[10px] font-bold uppercase tracking-wider bg-background border border-border">

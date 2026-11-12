@@ -149,6 +149,7 @@ export function GallerySection() {
                     height={photo.height}
                     className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading={index < 5 ? "eager" : "lazy"}
                   />
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300 rounded-2xl" />
